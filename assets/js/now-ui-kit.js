@@ -27,7 +27,6 @@ var navbar_initialized,
 
 $(document).ready(function() {
 
-
     // Activate the image for the navbar-collapse
     nowuiKit.initNavbarImage();
 
@@ -47,8 +46,6 @@ $(document).ready(function() {
         $(this).parent(".input-group").removeClass("input-group-focus");
     });
 
-
-
     if ($(window).width() >= 992) {
         big_image = $('.page-header-image[data-parallax="true"]');
 
@@ -59,9 +56,6 @@ $(document).ready(function() {
     $('.carousel').carousel({
         interval: 4000
     });
-
-
-
 
 });
 
@@ -136,9 +130,7 @@ nowuiKit = {
         }
     },
 
-
 }
-
 
 var big_image;
 
