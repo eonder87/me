@@ -26,16 +26,7 @@ var navbar_initialized,
     toggle_initialized = false;
 
 $(document).ready(function() {
-    //  Activate the Tooltips
-    $('[data-toggle="tooltip"], [rel="tooltip"]').tooltip();
 
-    // Activate Popovers and set color for popovers
-    $('[data-toggle="popover"]').each(function() {
-        color_class = $(this).data('color');
-        $(this).popover({
-            template: '<div class="popover popover-' + color_class + '" role="tooltip"><div class="arrow"></div><h3 class="popover-header"></h3><div class="popover-body"></div></div>'
-        });
-    });
 
     // Activate the image for the navbar-collapse
     nowuiKit.initNavbarImage();
@@ -56,17 +47,7 @@ $(document).ready(function() {
         $(this).parent(".input-group").removeClass("input-group-focus");
     });
 
-    // Activate bootstrapSwitch
-    $('.bootstrap-switch').each(function() {
-        $this = $(this);
-        data_on_label = $this.data('on-label') || '';
-        data_off_label = $this.data('off-label') || '';
 
-        $this.bootstrapSwitch({
-            onText: data_on_label,
-            offText: data_off_label
-        });
-    });
 
     if ($(window).width() >= 992) {
         big_image = $('.page-header-image[data-parallax="true"]');
@@ -79,23 +60,7 @@ $(document).ready(function() {
         interval: 4000
     });
 
-    $('.date-picker').each(function() {
-        $(this).datepicker({
-            templates: {
-                leftArrow: '<i class="now-ui-icons arrows-1_minimal-left"></i>',
-                rightArrow: '<i class="now-ui-icons arrows-1_minimal-right"></i>'
-            }
-        }).on('show', function() {
-            $('.datepicker').addClass('open');
 
-            datepicker_color = $(this).data('datepicker-color');
-            if (datepicker_color.length != 0) {
-                $('.datepicker').addClass('datepicker-' + datepicker_color + '');
-            }
-        }).on('hide', function() {
-            $('.datepicker').removeClass('open');
-        });
-    });
 
 
 });
@@ -171,30 +136,7 @@ nowuiKit = {
         }
     },
 
-    initSliders: function() {
-        // Sliders for demo purpose in refine cards section
-        var slider = document.getElementById('sliderRegular');
 
-        noUiSlider.create(slider, {
-            start: 40,
-            connect: [true, false],
-            range: {
-                min: 0,
-                max: 100
-            }
-        });
-
-        var slider2 = document.getElementById('sliderDouble');
-
-        noUiSlider.create(slider2, {
-            start: [20, 60],
-            connect: true,
-            range: {
-                min: 0,
-                max: 100
-            }
-        });
-    }
 }
 
 
