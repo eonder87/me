@@ -781,7 +781,7 @@ Created using IcoMoon - icomoon.io
 }
 
 .footer nav {
-  display: inline-block;
+  /* display: inline-block; - ignored due to float */
   float: left;
 }
 
@@ -2156,79 +2156,131 @@ a.credit {
 /* Common Style */
 .section {
   padding-bottom: 0;
-}/* --- GLOBAL COLOR OVERRIDES (Mavi Tema) --- */
+}
+
+/* --- GLOBAL COLOR OVERRIDES (Mavi Tema) --- */
 .bg-primary,
 .btn-primary,
 .progress-bar {
-    background-color: #0091ea !important;
-    border-color: #0091ea !important;
+  background-color: #0091ea !important;
+  border-color: #0091ea !important;
 }
 
 a,
 a:hover,
 a:focus {
-    color: #0091ea;
+  color: #0091ea;
 }
 
 .btn-primary:hover {
-    background-color: #007bb2 !important;
-    border-color: #007bb2 !important;
+  background-color: #007bb2 !important;
+  border-color: #007bb2 !important;
 }
 
 /* --- SOCIAL BUTTON COLORS (Renkli Butonlar) --- */
 .btn-facebook {
-    background-color: #3b5998 !important;
-    color: #fff !important;
+  background-color: #3b5998 !important;
+  color: #fff !important;
 }
 
 .btn-twitter {
-    background-color: #55acee !important;
-    color: #fff !important;
+  background-color: #55acee !important;
+  color: #fff !important;
 }
 
 .btn-linkedin {
-    background-color: #0077b5 !important;
-    color: #fff !important;
+  background-color: #0077b5 !important;
+  color: #fff !important;
 }
 
 .btn-instagram {
-    background-color: #e4405f !important;
-    color: #fff !important;
+  background-color: #e4405f !important;
+  color: #fff !important;
 }
 
 /* --- HEADER FIX --- */
 /* Mavi Gradient Overlay */
 .profile-page .page-header:before {
-    background: linear-gradient(180deg, rgba(0, 145, 234, 0.4) 0%, rgba(0, 0, 0, 0.6) 100%) !important;
-    background-image: linear-gradient(180deg, rgba(0, 145, 234, 0.4) 0%, rgba(0, 0, 0, 0.6) 100%) !important;
+  background: linear-gradient(180deg, rgba(0, 145, 234, 0.4) 0%, rgba(0, 0, 0, 0.6) 100%) !important;
+  background-image: linear-gradient(180deg, rgba(0, 145, 234, 0.4) 0%, rgba(0, 0, 0, 0.6) 100%) !important;
 }
 
 /* --- SECTIONS (BACKGROUNDS) --- */
 
 /* Hakkında Bölümü (Gradient) */
 .section#about {
-    background: linear-gradient(180deg, #f4f6f9 0%, #eef2f5 100%);
-    padding-bottom: 40px;
+  background: linear-gradient(180deg, #f4f6f9 0%, #eef2f5 100%);
+  padding-bottom: 40px;
 }
 
 .section#about .card {
-    background-color: rgba(255, 255, 255, 0.85);
-    border: 1px solid #e1e1e1;
+  background-color: rgba(255, 255, 255, 0.85);
+  border: 1px solid #e1e1e1;
 }
 
 /* Deneyim Bölümü (Beyaz) */
 .section#experience {
-    background-color: #fff;
-    padding-top: 60px;
-    padding-bottom: 60px;
+  background-color: #fff;
+  padding-top: 60px;
+  padding-bottom: 60px;
 }
 
 /* Kart Hover Efekti */
 .card {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15) !important;
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15) !important;
+}
+
+.cc-experience-header,
+.cc-education-header {
+  text-align: center;
+  color: #fff;
+}
+
+.cc-experience-header p,
+.cc-education-header p {
+  font-weight: 600;
+  opacity: 0.9;
+  margin-bottom: 5px;
+}
+
+.cc-experience-header .h5,
+.cc-education-header .h5 {
+  font-weight: 700;
+}
+
+/* Vertically center content in Experience and Education right columns */
+.cc-experience .col-md-9,
+.cc-education .col-md-9 {
+  display: flex;
+  align-items: center;
+}
+
+.cc-experience .col-md-9 .card-body,
+.cc-education .col-md-9 .card-body {
+  width: 100%;
+  min-height: unset !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+}
+
+/* Fix for disproportionate spacing in text - exclude headers */
+.card-body:not(.cc-experience-header):not(.cc-education-header) p {
+  text-align: left !important;
+  text-align-last: left !important;
+  word-spacing: normal !important;
+  white-space: normal !important;
+}
+
+.h5+.category {
+  margin-bottom: 0 !important;
+}
+
+.category+p {
+  margin-top: 0 !important;
 }
